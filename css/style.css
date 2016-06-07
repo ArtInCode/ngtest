@@ -1,0 +1,8 @@
+.flag-wrap{
+	border-radius: 3px; 
+	-o-border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	border:1px solid #999;
+	background: #CCCBCB
+}

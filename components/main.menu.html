@@ -1,0 +1,13 @@
+<ul class="nav navbar-nav navbar-right flag-wrap" > 
+        <li ng-repeat="f in menus.flags">
+            <a href="{{f.link}}" ng-click="UpdateLang($event)" data-lang="{{f.id}}">{{f.text}} </a>
+        </li> 
+</ul>
+<ul class="nav navbar-nav navbar-right " > 
+        <li ng-repeat="m in menus.items | orderBy:'order'">
+            <a href="/{{menus.current_lang}}{{m.link}}" >{{m.text}}</a>
+        </li> 
+</ul>
+
+
+

@@ -1,0 +1,26 @@
+<div class="col-md-12" ng-controller="LoginController">
+<h1>{{pageTitle}}</h1>
+
+<div class="col-md-6">
+<form role="form"  name="loginForm" ng-submit="submitForm(loginForm.$valid)" >
+  <div class="form-group" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine || meil_error}">
+    <label for="email">{{email_label}}:</label>
+    <input type="email"  class="form-control" name="email"   id="email" ng-model="user_email" ng-minlength="10" ng-maxlength="50" ng-model-options="{ updateOn: 'blur' }">
+    
+    <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine || loginForm.email.$error.minlength || meil_error" class="help-block">{{not_email}}</p>
+    <p ng-show="db_wrong_email">{{wrong_email}}</p>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine || pass_error}">
+    <label for="pwd">{{pass_label}}:</label>
+    <input type="password" name="password" class="form-control" id="pwd" ng-model="user_pass" ng-minlength="6" ng-maxlength="20" ng-model-options="{ updateOn: 'blur' }">
+     <p ng-show="loginForm.password.$error.minlength || pass_error" class="help-block">{{short_string}}</p>
+      <p ng-show="db_wrong_pass">{{wrong_pass}}</p>
+  </div>
+  
+  <input type="submit" class="btn btn-default" ng-click="scanForm(loginForm.$valid)" value="{{login_buton}}">
+</form>
+Try it Yourself »
+
+</div>
+
+</div>
